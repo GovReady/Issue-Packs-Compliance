@@ -1,0 +1,25 @@
+milestone: Compliance Survey
+issues:
+  -
+    title: Identify PoCs (Points of Contacts)
+    body: Identify the Points of Contacts for major IT components, like: Policies, Audit logs, Single Sign-on, Backup System, Supply Chain Management, Configuration Management, Code Analysis, Penetration Testing, Incident Response, Training, etc…
+    labels:
+      - Project Manager
+  -
+    title: Identify existing Policies documents
+    body: Organize any existing organization policy and procedure documents. The essence of these documents need to be converted to YAML.
+    labels:
+      - Project Manager
+  - 
+    title: Fork example policies repo and modify with organization policies and procedures
+    body: For an example of policies written up in YAML, fork 18F's repository: https://github.com/18F/compliance-docs
+    labels:
+       - Project Manager
+
+  -
+    title: Work with PoCs to create OpenControl YAML-ized descriptions of components
+    body: >
+      Arrange interviews with PoCs for various components. 
+      Work with them and their existing documents to create an description of components and the controls implmented by the components 
+      in the OpenControl YAML format. 
+      - Project Manager
