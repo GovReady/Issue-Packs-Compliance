@@ -3,23 +3,28 @@ issues:
   - title: As the CIO, I want to document and communicate our organization's approach and priorities for having an reliable audit trail of transactions in our IT systems.
 
     body: |
-      ### Why:
+    
+
+      *Why*
       Logging various transactions in our IT systems is how we can later audit activity for things that went wrong and for malicious actions. Without audit trail we won't have a record of interactions with the system.
 
-      ### How: 
+
+      *How*
       * Define roles in addition to ISSO or ISSM that the audit and accountability policy is to be disseminated to. (State if there are no additional roles)
       * Define roles in addition to ISSO or ISSM that the audit and accountability procedures are to be disseminated to. (State if there are no additional roles)
       * Ensure that the audit accountability policy and procedures are disseminated
       * Define frequency at which to review and update the audit and accountability policy and procedures (Annually).
       * Maintain audit trail of reviews and updates.
 
-      ### Evidence:
+
+      *Evidence*
       * List of personnel to whom accountability policy and procedures are to be disseminated
       * Audit and accountability policy
       * Audit and accountability policy version update page
       * Audit and accountability policy audit trail of reviews and updates
 
-      ### Links:
+
+      *Links*
       https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-1
 
     labels:
@@ -30,22 +35,27 @@ issues:
 
   - title: As the CIO, I want there to be sufficient server storage for audit records.
     body: |
-      ### Why
+    
+
+      *Why*
       We don’t want to lose critical audit records because storage capacity was exceeded.
 
-      ### How
+
+      *How*
       * Check organization Audit Policy for time range of audit records to be saved (e.g., 6 month, 1 year, etc.)
       * Estimate the storage required for the information system to store the required time period of logs
       * Allocate the storage for the logs. One strategy is to copy audit records from system to secondary storage system to avoid loss of critical information
       Set up a notification when maximum storage is approached (e.g., 80%)
 
-      ### Evidence
+
+      *Evidence*
       * Copy of section of audit policy specifying audit retention requirements
       * Copy of section of STIG or SRG that indicates audit retention requirements 
       * Demonstration of allocated storage (screenshot, service documentation, or configuration code
       * Demonstration of notification as max storage approached (screenshot or inspection)
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-4
       * http://800-53.govready.com/control?id=AU-4
 
@@ -57,10 +67,13 @@ issues:
 
   - title: As the CIO, I need the system to alert my team of an audit failure so that we may take necessary actions to avoid further data loss/corruption.
     body: |
-      ### Why
+    
+
+      *Why*
       We don’t want to lose critical audit records because of errors in the auditing system.
 
-      ### How
+
+      *How*
       * Set up monitoring to detect issues with the audit system. Examples
         * Pingdom
         * Amazon CloudWatch
@@ -70,10 +83,12 @@ issues:
       * Determine an effective test frequency and alert method (text, email, Slack).
       * Check the audit system monitors every two months to ensure they are working properly.
 
-      ### Evidence
+
+      *Evidence*
       * List of the people and method to alert when there are issues with the audit system.
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-5
 
     labels:
@@ -85,20 +100,25 @@ issues:
   - title: As the CISO, I need to review all log files regularly bi-weekly for unusual activities.
 
     body: |
-      ### Why
+    
+
+      *Why*
       We don’t want to lose critical audit records because of errors in the auditing system.
 
-      ### How
+
+      *How*
       * Determine what the important log files are (webserver error log, webserver access log, database access log, system error log) and where on the server they are located.
       * Decide which patterns we should be looking for: errors, suspicious access records, database access from an unexpected IP range.
       * Approve the workflow (who to contact and how to contact them) for reporting any abnormalities.
 
-      ### Evidence
+
+      *Evidence*
       * Copy of document listing log files and their locations.
       * List of known vulnerability patterns we looking for.
       * Document outlining workflow for reporting unusual activity.
 
-      ### Links 
+
+      *Links *
       https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-6
 
     labels:
@@ -110,20 +130,25 @@ issues:
   - title: As the CISO, I want be able to review useful reports from log files without a lot of log noise.
 
     body: |
-      ### Why
+
+
+      *Why*
       It can be difficult to track trends just by reading log files. By aggregating the log files and displaying them visually, we can monitor known malicious patterns and discover new patterns.
 
-      ### How
+
+      *How*
       * Use downloadable software (both open source and proprietary to reduce the log files locally.
       Use an online big data service to aggregate the log files in the cloud. Examples:
         * Loggly
         * Splunk
         * PaperTrails
 
-      ### Evidence
+
+      *Evidence*
       * Screenshot or downloadable report from the log file analyzer.
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-7
 
     labels:
@@ -135,20 +160,24 @@ issues:
   - title: As the CISO, I want to tag logged transactions with a UTC or GMT timestamp.
 
     body: |
-      ### Why
+
+
+      *Why*
       Reports need to be timestamped with an universally understood format to assist in analysis of events and system/data recovery.
 
-      ### How
+
+      *How*
       * Create organization standard for transaction record timestamp granularity of least 1 second
       * Create record timestamping mechanism that timestamps transactions with defined granularity in UTC or GMT
       * Timestamp with a system’s clock
 
 
-      ### Evidence
+      *Evidence*
       * Excerpt from STIG or SRG in use that defines timestamp granularity standard
       * Show example of logged events are being timestamped or configuration that forces timestamps
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-8
 
     labels:
@@ -160,18 +189,23 @@ issues:
   - title: As the CISO, I want to prevent unauthorized access to logs and audit reports and the systems that create them.
 
     body: |
-      ### Why
+
+
+      *Why*
       Audit information can contain system information that would be dangerous in the wrong hands.  By the same token, the systems that create reports could be manipulated by an unauthorized party to provide misleading information.
 
-      ### How
+
+      *How*
       * Determine list of privileged users that will have access to log generation, reduction reports and report-creating systems
       * Ensure log-related information are read-only and write-only to authorized users
       * Ensure report creation systems have permissions and or log-in credentials that bar access to unauthorized users
 
-      ### Evidence
+
+      *Evidence*
       * Provide list of privileged users with access to log generation, reduction reports and report-creating systems
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-9
 
     labels:
@@ -183,10 +217,13 @@ issues:
   - title: As the CIO, I want to be protected against users falsely denying having performed auditable actions.
 
     body: |
-      ### Why
+
+
+      *Why*
       When users take specific actions such as signing a contract or acknowledging receipt of information, they should not be able to repudiate that action 
 
-      ### How
+
+      *How*
       * Determine list of auditable actions that need to be tracked as part of the non-repudiation policy. Examples:
       * Signing a contract
       * Acknowledging receipt of information
@@ -196,11 +233,13 @@ issues:
       * Determine logging mechanisms, and where the log records are stored.
       * Review log files quarterly to ensure they the monitors are successfully collecting information.
 
-      ### Evidence
+
+      *Evidence*
       * List of actions covered by non-repudiation policy.
       * List of log files where each actions’ history is stored.
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-10
 
     labels:
@@ -212,19 +251,24 @@ issues:
   - title: As the CIO [OIG], I want to retain log file long enough to meet regulations and to investigate security incidents that happened weeks or months ago.
 
     body: |
-      ### Why
+
+
+      *Why*
       We may not learn of a penetration or security incident when it happens.
 
-      ### How
+
+      *How*
       Determine the official retention periods for different types of audit records (e.g., check organization policy and pertinent regulations)
       Make sure system is configured to either not delete log files too soon, or logs are transferred to a service or separate storage for retention
 
-      ### Evidence
+
+      *Evidence*
       * Excerpt of audit and accountability policy specifying retention periods of audit logs
       * Copy of an after action report which includes audit log information
       * Excerpt from STIG or SRG in use that automatically sets or specifies audit retention periods
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-10
 
     labels:
@@ -236,20 +280,25 @@ issues:
   - title: As the developer, I want the components of the system to generate required logs with required content.
 
     body: |
-      ### Why
+
+
+      *Why*
       The organization needs certain information for audit purposes
 
-      ### How
+
+      *How*
       * Check AU-2 for a list of auditable events and figure out which components provide the logs for those events
       * Work with security and business to confirm events and components
       * Check AU-3 for necessary log content and modify log templates and content accordingly
 
-      ### Evidence
+
+      *Evidence*
       * URL to audit and accountability policy
       * List of system components that generate logs and log retention
       * Excerpt from STIG or SRG in use that automatically sets or specifies log settings
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-11
 
     labels:
@@ -261,21 +310,25 @@ issues:
   - title: As a CISO, I need to periodically check for data spillage and indicators of breaches showing up online.
 
     body: |
-      ### Details
+
+
+      *Details*
       Some types of content we are trying to protect:
       * User accounts
       * PII
       * Server configuration (error messages)
       * Secrets (in code repos)
 
-      ### How
+
+      *How*
       * Brainstorm ways to look for our information on the public web.
       * Develop a list of search terms that would indicate unauthorized information might be appearing online.
       * Identify a list of organizationally controlled information services that might accidentally leak organizational information (e.g., newsletters, website, powerpoint presentations).
       * Set up a google newsalert for FCC Hack,
       * Find a service that searches publicly available information for data spills; look for government services providers
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-12
 
     labels:
@@ -287,20 +340,25 @@ issues:
   - title: As the CISO, I need authorized members of the security team to be able to select individual sessions to view and/or record for further study.
 
     body: |
-      ### Why
+    
+
+      *Why*
       There may be events or unapproved activity traced back to specific users. So we need the ability to be able to view/record individual sessions to be able to isolate these events.
 
-      ### How
+
+      *How*
       Create a special group of users for authorized security team members.
       Configure information system to provide special group the ability to select a user session to capture/record or view/hear.
 
-      ### Evidence
+
+      *Evidence*
       ## AUdit and accountability policy
       * Applicable STIGs or SRGs
       * List of privileged users who will have authorized access to the management of audit functionality.
       * List of privileged users who will have authorized remote access to manage user sessions in real time.
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-14
 
     labels:
@@ -312,20 +370,25 @@ issues:
   - title: As the CIO, I want to have an alternate auditing capability as a real-time failover for the main auditing subsystem.
 
     body: |
-      ### Why
+    
+
+      *Why*
       We do not want any gaps in the system audit of transactions.
 
-      ### How
+
+      *How*
       * Define alternative audit functionality in the event of a failure of primary audit functionality.
       * Consider trade-offs between needs for availability and audit integrity
       * Default action should be to shut down information system unless availability is an overriding concern.
       * Configure the information system to implement defined alternative audit capability.
 
-      ### Evidence
+
+      *Evidence*
       * Audit and accountability policy
       * Applicable STIGs or SRGs
 
-      ### Links
+
+      *Links*
       * https://web.nvd.nist.gov/view/800-53/Rev4/control?controlName=AU-15
 
     labels:
